@@ -13,8 +13,7 @@
   "keywords": [
     "healthprobe",
     "amazon",
-    "load",
-    "balancer"
+    "load balancer"
   ],
   "author": "Yaniv Kessler",
   "license": "MIT",
