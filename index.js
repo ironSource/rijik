@@ -34,7 +34,7 @@ RijikHealthProbe.prototype.httpServer = function() {
 };
 
 RijikHealthProbe.prototype.start = function () {
-	var server = http.createServer(this.httpServerHandler());
+	var server = http.createServer(this.httpServer());
 	var config = this._config;
 
 	server.on('listening', function () {
