@@ -35,13 +35,13 @@ RijikHealthProbe.prototype.httpServer = function() {
 
 RijikHealthProbe.prototype.start = function () {
 	var server = http.createServer(this.httpServer());
-	var config = this._config;
+	var port = this._port;
 
 	server.on('listening', function () {
-		console.log('rijik started: %s', config.port);
+		console.log('rijik started: %s', port);
 	});
 
-	server.listen(this._port);
+	server.listen(port);
 };
 
 module.exports = RijikHealthProbe;
