@@ -38,7 +38,7 @@ RijikHealthProbe.prototype.start = function () {
 	var config = this._config;
 
 	server.on('listening', function () {
-		console.log('rijik started: %s', config.rijik.port);
+		console.log('rijik started: %s', config.port);
 	});
 
 	server.listen(this._port);

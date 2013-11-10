@@ -1,6 +1,6 @@
 {
   "name": "rijik-healthprobe",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a very simple http healthprobe to plug inside your app",
   "main": "index.js",
   "scripts": {
