@@ -9,11 +9,13 @@ function Response() {
 
 }
 
-Response.prototype.write = function(message) {
-	this.message = message;
-};
+Response.prototype.writeHead = function (statusCode, headers) {
+	this.statusCode = statusCode;
+	this.headers = headers;
+}
 
-Response.prototype.end = function () {
+Response.prototype.end = function (message) {
+	this.message = message;
 	this.endCalled = true;
 };
 

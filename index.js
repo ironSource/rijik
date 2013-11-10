@@ -19,17 +19,22 @@ RijikHealthProbe.prototype.httpServer = function() {
 		var lastStat = self._lastStat;
 		var stat = self._stat;
 
-		response.write('last stat: ' + lastStat + ', current stat:' + stat);
+		var message = 'last stat: ' + lastStat + ', current stat:' + stat;
+		var statusCode = 200;
 
-		if (self._lastStat === self._stat) {
-			response.statusCode = 500;
-		} else {
-			response.statusCode = 200;
+
+		if (lastStat === stat) {
+			statusCode = 500;
 		}
 
 		self._lastStat = self._stat;
 
-		response.end();
+		response.writeHead(statusCode, {
+		  'Content-Length': Buffer.byteLength(message),
+		  'Content-Type': 'text/plain'
+		});
+
+		response.end(message);
 	};
 };
 
